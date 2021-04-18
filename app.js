@@ -1,5 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
+const generateMarkdown = require("./Develop/utils/generateMarkdown.js");
+const fs = require("fs");
+//const { writeFile } = require("node:fs");
 
 // TODO: Create an array of questions for user input
 const promptUser = () => {
@@ -7,7 +10,33 @@ const promptUser = () => {
     .prompt([
       {
         type: "input",
-        name: "Title",
+        name: "userName",
+        message: "Please enter your git hub user name. (Required)",
+        validate: (userNameInput) => {
+          if (userNameInput) {
+            return true;
+          } else {
+            console.log("Username is required. Please enter your git hub user name.");
+            return false;
+          }
+        }
+      },
+      {
+        type: "input",
+        name: "repoName",
+        message: "Please enter your repos root directory name.",
+        validate: (repoNameInput) => {
+          if (repoNameInput) {
+            return true;
+          } else {
+            console.log("Your repos root directory name is required. Please enter your repos root directory name.");
+            return false;
+          }
+        }
+      },
+      {
+        type: "input",
+        name: "title",
         message: "What is the title of your project? (Required)",
         validate: (titleInput) => {
           if (titleInput) {
@@ -20,7 +49,7 @@ const promptUser = () => {
       },
       {
         type: "input",
-        name: "Description",
+        name: "description",
         message: "Please write a description of your project",
         validate: (descriptionInput) => {
           if (descriptionInput) {
@@ -41,7 +70,7 @@ const promptUser = () => {
       },
       {
         type: "input",
-        name: "Link",
+        name: "link",
         message: "Go ahead and enter your link now.",
         when: ({ linkConfirm }) => {
           if (linkConfirm) {
@@ -53,60 +82,91 @@ const promptUser = () => {
       },
       {
         type: "input",
-        name: "Installation",
+        name: "installation",
         message:
           "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
       },
       {
         type: "input",
-        name: "Usage",
+        name: "usage",
         message:
           "Provide instructions and examples for use. Include screenshots as needed.",
       },
       {
         type: "input",
-        name: "Credits",
+        name: "credits",
         message:
           "List your collaborators, if any, with links to their GitHub profiles.",
       },
       {
-        type: "list",
-        name: "License",
+        type: "checkbox",
+        name: "license",
         message: "Provide a license ", ////////COME BAK TO THIS PART////////
-        choices: [""],
+        choices: ["MIT", "GNU General Public License v3.0", "Apache License 2.0", "ISC License"],
       },
       {
         type: "input",
-        name: "Features",
+        name: "features",
         message:
-          "Please describe any features you would like provide detail to.",
+          "Please describe any features the you would like provide more detail to.",
       },
       {
         type: "input",
-        name: "Tests",
+        name: "tests",
         message:
-          "PLease describe any test that your project has and explain how to run them.",
+          "Please describe any test that your project has and explain how to run them.",
       },
       {
         type: "input",
-        name: "Contributing",
-        message: "If you want others to contribute, let them know how here!",
+        name: "contributing",
+        message: "Let others know how to contribute.",
+      },
+      {
+        type: "input",
+        name: "questions",
+        message:
+          "Let other know how they can reach you for any additional questions they may have.",
       },
     ])
     .then((readmeData) => {
-      //////////////
+      return generateMarkdown(readmeData);
+    })
+    .then(readmeFile => {
+      return writeToFile('./Develop/dist/README.md', readmeFile);
+    })
+    // .then(writeFileResponse => {
+    //   console.log(writeFileResponse);
+    //   return copyFile();
+    // })
+    // .then(copyFileResponse => {
+    //   console.log(copyFileResponse);
+    // })
+    .catch(err => {
+      console.log(err);
     });
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(fileName, data, (err) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve({
+        ok: true,
+        message: "File created"
+      });
+    });
+  });
+};
 
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 init();
-
 
 ///////////////
 promptUser();
