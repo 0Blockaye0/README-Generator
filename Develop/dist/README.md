@@ -23,19 +23,19 @@
 
   ## Installation
 
-  s
+  
 
 
   ## Usage
 
-  s
+  
 
-  ![screenshot](../assets/images/screenshot.png)
+  ![screenshot](/assets/images/screenshot.png)
 
 
   ## Credits
 
-  d
+  
 
 
   ## License
@@ -50,7 +50,7 @@
 
   ## Features
 
-  w
+  
 
 
   ## Tests
