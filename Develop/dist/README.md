@@ -1,12 +1,13 @@
 
-  # readme
+  # k
 
   ## Description 
 
-  lenkfnnqw3rnfgbnw3
+  k
 
   here is a link to my project.
-  (undefined)
+  
+  * [link](undefined)
 
   ## Table of Contents
 
@@ -22,17 +23,19 @@
 
   ## Installation
 
-  kjrbfjeqbrjg
+  s
 
 
   ## Usage
 
-  erbgjifbq3
+  s
+
+  ![screenshot](../assets/images/screenshot.png)
 
 
   ## Credits
 
-  kwbefkjbwijebf
+  d
 
 
   ## License
@@ -42,26 +45,34 @@
 
   ## Badges
   
-  ![https://img.shields.io/github/languages/top/0blockaye0/README-GENERATOR?style=flat-square](https://img.shields.io/github/languages/top/0blockaye0/README-GENERATOR?style=flat-square) 
-  ![https://img.shields.io/bitbucket/issues/0blockaye0/README-GENERATOR?style=flat-square](https://img.shields.io/bitbucket/issues/0blockaye0/README-GENERATOR?style=flat-square) 
+  ![https://img.shields.io/github/languages/top/k/k?style=flat-square](https://img.shields.io/github/languages/top/k/k?style=flat-square) 
+  ![https://img.shields.io/bitbucket/issues/k/k?style=flat-square](https://img.shields.io/bitbucket/issues/k/k?style=flat-square) 
 
   ## Features
 
-  erwnfjnerqwjonfg
+  w
 
 
   ## Tests
 
-  erbnjfbgqorbgfoiqo
+  
 
 
   ## Contributing
 
-  bwerjkfbqberfgjkbewjqbfjbwq
+  
 
 
- ## Questions
+  ## Questions
 
-  dnbjfwbjebfjbweji
+  If you have any questions about the app, 
+  please feel free to contact me via email, 
+  or checkout my Github account for more 
+  great projects! 
+
+  * [Email](mailto:)
+  * [Github](https://github.com/k)
+
+
 
 

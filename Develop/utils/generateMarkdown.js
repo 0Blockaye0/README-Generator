@@ -26,21 +26,15 @@ function renderLicenseLink(license) {
     case ("ISC Lisence"):
       return "[https://www.apache.org/licenses/LICENSE-2.0.txt](https://www.apache.org/licenses/LICENSE-2.0.txt)";
     default:
-      return "sweeeeeeet";
+      return "No license is provided for this project";
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// const topLanguage = `![topLanguageUseed](/github/languages/top/${data.userName}/${data.repoName}?style=flat-square)`
-
-// TODO: Create a function to generate markdown for README
+// function to generate markdown for README
 function generateMarkdown(data) {
   const topLanguage = `![https://img.shields.io/github/languages/top/${data.userName}/${data.repoName}?style=flat-square](https://img.shields.io/github/languages/top/${data.userName}/${data.repoName}?style=flat-square)`
   const openIssues = `![https://img.shields.io/bitbucket/issues/${data.userName}/${data.repoName}?style=flat-square](https://img.shields.io/bitbucket/issues/${data.userName}/${data.repoName}?style=flat-square)`
-  // https://img.shields.io/github/languages/top/0blockaye0/README-GENERATOR   ${data.userName}   ${data.repoName}
+  
   return `
   # ${data.title}
 
@@ -49,7 +43,8 @@ function generateMarkdown(data) {
   ${data.description}
 
   here is a link to my project.
-  (${data.link})
+  
+  * [link](${data.link})
 
   ## Table of Contents
 
@@ -71,6 +66,8 @@ function generateMarkdown(data) {
   ## Usage
 
   ${data.usage}
+
+  ![screenshot](/assets/images/${data.screenshot})
 
 
   ## Credits
@@ -103,9 +100,17 @@ function generateMarkdown(data) {
   ${data.contributing}
 
 
- ## Questions
+  ## Questions
 
-  ${data.questions}
+  If you have any questions about the app, 
+  please feel free to contact me via email, 
+  or checkout my Github account for more 
+  great projects! 
+
+  * [Email](mailto:${data.email})
+  * [Github](https://github.com/${data.userName})
+
+
 
 
 `;
