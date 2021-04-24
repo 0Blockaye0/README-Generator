@@ -100,7 +100,7 @@ const promptUser = () => {
           type: "input",
           name: "screenshot",
           message: 
-            "To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, we will add it to your README using the following syntax: EXAMPLE: ![alt text](assets/images/<screenshot.png>) Just enter the file between the < > in the example", 
+            "To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it. Then, using the relative filepath, we will add it to your README using the following syntax: EXAMPLE: ![alt text](./assets/images/<screenshot.png>) Just enter the file between the < > in the example", 
         },
         {
           type: "input",
@@ -176,4 +176,3 @@ function writeToFile(fileName, data) {
 ////////////////
 promptUser(); //
 ////////////////
-
