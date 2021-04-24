@@ -148,7 +148,7 @@ const promptUser = () => {
         return generateMarkdown(readmeData);
       })
       .then((readmeFile) => {
-        return writeToFile("./Develop/dist/README.md", readmeFile);
+        return writeToFile("./Develop/README.md", readmeFile);
       })
       .catch((err) => {
         console.log(err);
